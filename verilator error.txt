@@ -1,0 +1,33 @@
+Error on my test
+make TARGETS="riscv_isa" 
+rm -f /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/test_info
+mkdir -p /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0
+rm -f /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/*.hex
+make -C /home/polina/soc/Lab2/scr1/sim/tests/riscv_isa ARCH=imc
+make[1]: Entering directory '/home/polina/soc/Lab2/scr1/sim/tests/riscv_isa'
+mkdir -p /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs
+riscv64-unknown-elf-gcc -c /home/polina/soc/Lab2/scr1/sim/tests/riscv_isa/../../../dependencies/riscv-tests/isa/rv32mi/sbreak.S -I/home/polina/soc/Lab2/scr1/sim/tests/common -I/home/polina/soc/Lab2/scr1/sim/tests/riscv_isa -DASM -Wa,-march=rv32imfc -march=rv32imfc -mabi=ilp32f -D__riscv_xlen=32 -o /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs/sbreak.o
+riscv64-unknown-elf-gcc /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs/sbreak.o -static -fvisibility=hidden -nostdlib -nostartfiles -T/home/polina/soc/Lab2/scr1/sim/tests/common/link.ld -march=rv32imfc -mabi=ilp32f -o /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/sbreak.elf
+/home/polina/soc/riscv-gcc-10.2.0/bin/../lib/gcc/riscv64-unknown-elf/10.2.0/../../../../riscv64-unknown-elf/bin/ld: /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs/sbreak.o(.text+0x865): 3 bytes required for alignment to 4-byte boundary, but only 2 present
+/home/polina/soc/riscv-gcc-10.2.0/bin/../lib/gcc/riscv64-unknown-elf/10.2.0/../../../../riscv64-unknown-elf/bin/ld: can't relax section: bad value
+collect2: error: ld returned 1 exit status
+make[1]: *** [Makefile:42: /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/sbreak.elf] Error 1
+make[1]: Leaving directory '/home/polina/soc/Lab2/scr1/sim/tests/riscv_isa'
+make: *** [Makefile:202: riscv_isa] Error 2
+
+Error on all tests:
+make TARGETS="riscv_isa" 
+rm -f /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/test_info
+mkdir -p /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0
+rm -f /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/*.hex
+make -C /home/polina/soc/Lab2/scr1/sim/tests/riscv_isa ARCH=imc
+make[1]: Entering directory '/home/polina/soc/Lab2/scr1/sim/tests/riscv_isa'
+mkdir -p /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs
+riscv64-unknown-elf-gcc -c /home/polina/soc/Lab2/scr1/sim/tests/riscv_isa/../../../dependencies/riscv-tests/isa/rv32mi/sbreak.S -I/home/polina/soc/Lab2/scr1/sim/tests/common -I/home/polina/soc/Lab2/scr1/sim/tests/riscv_isa -DASM -Wa,-march=rv32imfc -march=rv32imfc -mabi=ilp32f -D__riscv_xlen=32 -o /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs/sbreak.o
+riscv64-unknown-elf-gcc /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs/sbreak.o -static -fvisibility=hidden -nostdlib -nostartfiles -T/home/polina/soc/Lab2/scr1/sim/tests/common/link.ld -march=rv32imfc -mabi=ilp32f -o /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/sbreak.elf
+/home/polina/soc/riscv-gcc-10.2.0/bin/../lib/gcc/riscv64-unknown-elf/10.2.0/../../../../riscv64-unknown-elf/bin/ld: /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/riscv_objs/sbreak.o(.text+0x865): 3 bytes required for alignment to 4-byte boundary, but only 2 present
+/home/polina/soc/riscv-gcc-10.2.0/bin/../lib/gcc/riscv64-unknown-elf/10.2.0/../../../../riscv64-unknown-elf/bin/ld: can't relax section: bad value
+collect2: error: ld returned 1 exit status
+make[1]: *** [Makefile:42: /home/polina/soc/Lab2/scr1/build/verilator_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0/sbreak.elf] Error 1
+make[1]: Leaving directory '/home/polina/soc/Lab2/scr1/sim/tests/riscv_isa'
+make: *** [Makefile:202: riscv_isa] Error 2
