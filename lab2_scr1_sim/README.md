@@ -41,5 +41,7 @@ SCR1_ARCH_MTVEC_BASE = 0x0840
 6. После завершения работы необходимо установить sudo apt install gtkwave. Собрать проект в режиме генерации wave форм: make run_verilator_wf TARGETS="riscv_isa". После этого можно открыть wave форму в дирректории scr1/build/verilator_wf_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_0 командой gtkwave ./simx.vcd
 
 ## Коментарий к работе
+Изменения, весенные в файлы, можно проследить в истории изменений в веткеlab2_scr1_sim.
+
 Из-за системной ошибки в работе компилятора Verilator, не получилось запустить симуляцию теста, который указан в задании. Файл с стектрейсом ошибки: verilator error.txt.
  
